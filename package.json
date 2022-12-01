@@ -2,9 +2,11 @@
   "name": "projet-06-agence-artistes-digitaux-back",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node .",
+    "dev": "NODE_ENV=development DEBUG=*,-express:*,-nodemon*,-send,-body-parser npx nodemon server.js",
     "deployDB": "sqitch deploy; DEBUG=import*",
     "resetDB": "sqitch revert -y; DEBUG=import*"
   },

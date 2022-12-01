@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "resetDB": "sqitch revert -y; sqitch deploy"
+    "deployDB": "sqitch deploy; DEBUG=import*",
+    "resetDB": "sqitch revert -y; DEBUG=import*"
   },
   "repository": {
     "type": "git",

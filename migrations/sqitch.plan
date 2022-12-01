@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=brushizer
+
+structure 2022-12-01T09:43:23Z faugeroux.alexis@gmail.com <faugeroux.alexis@gmail.com> # Create tables role, user, collection, artwork, attribute, artwork_has_attribute

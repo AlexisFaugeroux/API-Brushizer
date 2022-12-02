@@ -1,3 +1,5 @@
+import '../app/helpers/loadEnv.js';
+
 import pg from 'pg';
 import debug from 'debug';
 
@@ -47,7 +49,7 @@ const debugImport = debug('importData');
             INSERT INTO "user"("email", "password", "pseudo", "profile_pic", "role_id")
                 VALUES($1,$2,$3,$4,$5)
             `,
-            [user.email, user.password, user.pseudo, user.role_id],
+            [user.email, user.password, user.pseudo, user.profile_pic, user.role_id],
         );
         userQueries.push(query);
     });
@@ -117,7 +119,7 @@ const debugImport = debug('importData');
         debugImport('Processing association: ', association.id);
         const query = client.query(
             `
-            INSERT INTO "association"("artwork_id", "attribute_id")
+            INSERT INTO "artwork_has_attribute"("artwork_id", "attribute_id")
                 VALUES($1,$2,$3)
             `,
             [association.artwork_id, association.attribute_id],
@@ -126,4 +128,8 @@ const debugImport = debug('importData');
     });
 
     await Promise.all(artworkHasAttributeQueries);
+
+    debugImport('Import done');
+
+    client.end();
 })();

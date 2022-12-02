@@ -2,10 +2,12 @@
   "name": "projet-06-agence-artistes-digitaux-back",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "deployDB": "sqitch deploy; DEBUG=import*",
+    "dev": "NODE_ENV=development DEBUG=*,-express:*,-nodemon*,-send,-body-parser npx nodemon server.js",
+    "deployDB": "sqitch deploy; DEBUG=import* node ./data/import-data.js",
     "resetDB": "sqitch revert -y; DEBUG=import*"
   },
   "repository": {

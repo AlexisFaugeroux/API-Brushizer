@@ -52,7 +52,7 @@ CREATE TABLE "attribute"(
 
 CREATE TABLE "artwork_has_attribute"(
     "artwork_id" INT NOT NULL REFERENCES "artwork"("id"),
-    "collection_id" INT NOT NULL REFERENCES "collection"("id"),
+    "attribute_id" INT NOT NULL REFERENCES "attribute"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 

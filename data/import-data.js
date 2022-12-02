@@ -115,14 +115,14 @@ const debugImport = debug('importData');
 
     const artworkHasAttributeQueries = [];
 
-    artworkHasAttributes.forEach((association) => {
-        debugImport('Processing association: ', association.id);
+    artworkHasAttributes.forEach((artworkHasAttribute) => {
+        debugImport('Processing artworkHasAttribute: ', artworkHasAttribute.id);
         const query = client.query(
             `
             INSERT INTO "artwork_has_attribute"("artwork_id", "attribute_id")
-                VALUES($1,$2,$3)
+                VALUES($1,$2)
             `,
-            [association.artwork_id, association.attribute_id],
+            [artworkHasAttribute.artwork_id, artworkHasAttribute.attribute_id],
         );
         artworkHasAttributeQueries.push(query);
     });

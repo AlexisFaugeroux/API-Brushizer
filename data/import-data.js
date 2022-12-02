@@ -6,7 +6,7 @@ import users from './user.json' assert {type: 'json'};
 import collections from './collection.json' assert {type: 'json'};
 import artworks from './artwork.json' assert {type: 'json'};
 import attributes from './attribute.json' assert {type: 'json'};
-import artwork_has_attribute from './artwork_has_attribute.json' assert {type: 'json'};
+import artworkHasAttributes from './artwork_has_attribute.json' assert {type: 'json'};
 
 const { Client } = pg;
 
@@ -53,4 +53,77 @@ const debugImport = debug('importData');
     });
 
     await Promise.all(userQueries);
+
+    const collectionQueries = [];
+
+    collections.forEach((collection) => {
+        debugImport('Processing collection: ', collection.name);
+        const query = client.query(
+            `
+            INSERT INTO "collection"("name", "artist_name", "user_id")
+                VALUES($1,$2,$3)
+            `,
+            [collection.name, collection.artist_name, collection.user_id],
+        );
+        collectionQueries.push(query);
+    });
+
+    await Promise.all(collectionQueries);
+
+    const artworkQueries = [];
+
+    artworks.forEach((artwork) => {
+        debugImport('Processing artwork: ', artwork.name);
+        const query = client.query(
+            `
+            INSERT INTO "artwork"("name", "image", "description", "artist_name", "price_usd", "price_sol", "user_id", "collection_id")
+                VALUES($1,$2,$3,$4,$5,$6,$7,$8)
+            `,
+            [
+                artwork.name,
+                artwork.image,
+                artwork.description,
+                artwork.artist_name,
+                artwork.price_usd,
+                artwork.price_sol,
+                artwork.user_id,
+                artwork.collection_id,
+            ],
+        );
+        artworkQueries.push(query);
+    });
+
+    await Promise.all(artworkQueries);
+
+    const attributeQueries = [];
+
+    attributes.forEach((attribute) => {
+        debugImport('Processing attribute: ', attribute.id);
+        const query = client.query(
+            `
+            INSERT INTO "attribute"("background", "shape", "shape_color")
+                VALUES($1,$2,$3)
+            `,
+            [attribute.background, attribute.shape, attribute.shape_color],
+        );
+        attributeQueries.push(query);
+    });
+
+    await Promise.all(attributeQueries);
+
+    const artworkHasAttributeQueries = [];
+
+    artworkHasAttributes.forEach((association) => {
+        debugImport('Processing association: ', association.id);
+        const query = client.query(
+            `
+            INSERT INTO "association"("artwork_id", "attribute_id")
+                VALUES($1,$2,$3)
+            `,
+            [association.artwork_id, association.attribute_id],
+        );
+        artworkHasAttributeQueries.push(query);
+    });
+
+    await Promise.all(artworkHasAttributeQueries);
 })();

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node .",
     "dev": "NODE_ENV=development DEBUG=*,-express:*,-nodemon*,-send,-body-parser npx nodemon server.js",
-    "deployDB": "sqitch deploy; DEBUG=import*",
+    "deployDB": "sqitch deploy; DEBUG=import* node ./data/import-data.js",
     "resetDB": "sqitch revert -y; DEBUG=import*"
   },
   "repository": {

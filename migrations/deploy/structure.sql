@@ -4,9 +4,7 @@ BEGIN;
 
 CREATE TABLE "role"(
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "user" TEXT NOT NULL,
-    "creator" TEXT NOT NULL,
-    "admin" TEXT NOT NULL
+    "label" TEXT NOT NULL
 );
 
 CREATE TABLE "user"(

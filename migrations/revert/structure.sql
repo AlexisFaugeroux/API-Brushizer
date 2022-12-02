@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+DROP TABLE "artwork_has_attribute", "attribute", "artwork", "collection", "user", "role";
 
 COMMIT;

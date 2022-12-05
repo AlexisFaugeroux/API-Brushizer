@@ -17,3 +17,5 @@ package-lock.json
 #config
 .env
 sqitch.conf
+
+validation/

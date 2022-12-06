@@ -1,0 +1,29 @@
+import express from 'express';
+
+import wrapper from '../helpers/controllerWrapper.js';
+import controller from '../controllers/artwork.js';
+
+const router = express.Router();
+
+router.route('/')
+    /**
+     * GET /artworks
+     * @summary Get all artworks
+     * @tags Artwork
+     * @return {[Artwork]} 200 - Success response - application/json
+     */
+    .get(wrapper(controller.getAll));
+
+router.route('/:id(\\d+)')
+    /**
+     * GET /artworks/{id}
+     * @summary Get one artwork
+     * @tags Artwork
+     * @param {number} id - category identifier
+     * @return {Artwork} 200 - Success response - application/json
+     * @return { ? } 400 - Bad request response - application/json
+     * @return { ? } 404 - Category not found - application/json
+     */
+    .get(wrapper(controller.getOne));
+
+export default router;

@@ -1,0 +1,13 @@
+# Test file for API HTTP routes
+
+@endpoint = http://localhost:{{$dotenv PORT}}
+
+############################
+#         ARTWORKS         #
+############################
+
+### List of all artworks
+GET {{ endpoint }}/artworks
+
+### Get one artwork based on its id
+GET {{ endpoint }}/artworks/6

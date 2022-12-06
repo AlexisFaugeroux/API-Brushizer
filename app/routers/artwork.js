@@ -19,10 +19,10 @@ router.route('/:id(\\d+)')
      * GET /artworks/{id}
      * @summary Get one artwork
      * @tags Artwork
-     * @param {number} id - category identifier
+     * @param {number} id - Artwork identifier
      * @return {Artwork} 200 - Success response - application/json
      * @return { ? } 400 - Bad request response - application/json
-     * @return { ? } 404 - Category not found - application/json
+     * @return { ? } 404 - Artwork not found - application/json
      */
     .get(wrapper(controller.getOne));
 

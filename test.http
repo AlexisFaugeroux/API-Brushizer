@@ -2,6 +2,9 @@
 
 @endpoint = http://localhost:{{$dotenv PORT}}
 
+### 404
+GET {{ endpoint }}/somethingsmart
+
 ############################
 #         ARTWORKS         #
 ############################

@@ -1,4 +1,5 @@
 import Model from '../models/index.js';
+import Error404 from '../helpers/error404.js';
 
 export default {
     /**
@@ -24,6 +25,8 @@ export default {
         const { id } = req.params;
 
         const artwork = await Model.artwork.findByPk(id);
+
+        if (!artwork) throw new Error404('Artwork not found');
 
         return res.json(artwork);
     },

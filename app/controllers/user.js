@@ -11,7 +11,6 @@ export default {
 
     async getAll(_, res) {
         const users = await Model.user.findAll();
-
         return res.json(users);
     },
 

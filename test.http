@@ -14,3 +14,23 @@ GET {{ endpoint }}/artworks
 
 ### Get one artwork based on its id
 GET {{ endpoint }}/artworks/6
+
+############################
+#         USERS         #
+############################
+
+### List of all roles
+GET {{ endpoint }}/roles
+
+### Get one based on its id
+GET {{ endpoint }}/roles/3
+
+############################
+#         USERS         #
+############################
+
+### List of all users
+GET {{ endpoint }}/users
+
+### Get one user based on its email
+GET {{ endpoint }}/users/4

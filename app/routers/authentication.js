@@ -1,7 +1,7 @@
 import express from 'express';
 
 import wrapper from '../middlewares/controllerWrapper.js';
-import controller from '../controllers/authentication';
+import controller from '../controllers/authentication.js';
 
 const router = express.Router();
 

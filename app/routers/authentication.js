@@ -7,12 +7,12 @@ const router = express.Router();
 
 router.route('/')
     /**
-     * POST /users
+     * POST /login
      * @summary Authenticate a user
-     * @return {[User]} 200 - Success response - application/json
+     * @return {string} JSON Web Token - 200 - Success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
-     * @return {ApiError} 404 - User not found - application/json
+     * @return {ApiError} 401 - Incorrect pseudo or password response - application/json
      */
-    .get(wrapper(controller.login));
+    .post(wrapper(controller.login));
 
 export default router;

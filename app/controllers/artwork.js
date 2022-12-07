@@ -6,7 +6,7 @@ export default {
      * Controller for GET /artworks
      * @param {object} _ - Express middleware request (not used)
      * @param {object} res - Express middleware response
-     * @returns {object} Route API JSON response
+     * @returns Route API JSON response
      */
 
     async getAll(_, res) {
@@ -19,7 +19,7 @@ export default {
      * Controller for GET /artworks/:id
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response
-     * @returns {object} Route API JSON response
+     * @returns Route API JSON response
      */
     async getOne(req, res) {
         const { id } = req.params;

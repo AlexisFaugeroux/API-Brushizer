@@ -16,9 +16,11 @@ export default {
 
     getUserDataFromToken(token, ip) {
         try {
-            const userData = jwt.verify(token, process.env.JWT_SECRET ?? 'supersecretphrase');
+            const payload = jwt.verify(token, process.env.JWT_SECRET ?? 'supersecretphrase');
 
-            if (userData.ip !== ip) throw new Error401('Invalid token');
+            if (payload.ip !== ip) throw new Error401('Invalid token');
+
+            const { password, ...userData } = payload;
 
             return userData;
         } catch (err) {

@@ -6,7 +6,7 @@ export default {
      * Controller for GET /users
      * @param {object} _ - Express middleware request (not used)
      * @param {object} res - Express middleware response
-     * @returns {object} Route API JSON response
+     * @returns Route API JSON response
      */
 
     async getAll(_, res) {
@@ -18,7 +18,7 @@ export default {
      * Controller for GET /users/:id
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response
-     * @returns {object} Route API JSON response
+     * @returns Route API JSON response
      */
     async getOneByPk(req, res) {
         const { id } = req.params;
@@ -34,7 +34,7 @@ export default {
      * Controller for GET /users/:pseudo
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response
-     * @returns {object} Route API JSON response
+     * @returns Route API JSON response
      */
     async getOneByPseudo(req, res) {
         const { pseudo } = req.params;

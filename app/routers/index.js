@@ -1,15 +1,18 @@
 import express from 'express';
 
 import artworkRouter from './artwork.js';
+import roleRouter from './role.js';
 import authenticationRouter from './authentication.js';
 
-import errorHandlerFactory from '../helpers/errorHandler.js';
+import errorHandlerFactory from '../middlewares/errorHandler.js';
 import Error404 from '../helpers/error404.js';
 
 const router = express.Router();
 
+router.use('/login', authenticationRouter);
+
 router.use('/artworks', artworkRouter);
-router.use('/authentication', authenticationRouter);
+router.use('/roles', roleRouter);
 
 // Error 404 handler middleware
 router.use((_, __, next) => {

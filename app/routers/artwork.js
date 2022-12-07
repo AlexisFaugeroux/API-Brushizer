@@ -1,6 +1,6 @@
 import express from 'express';
 
-import wrapper from '../helpers/controllerWrapper.js';
+import wrapper from '../middlewares/controllerWrapper.js';
 import controller from '../controllers/artwork.js';
 
 const router = express.Router();
@@ -21,8 +21,8 @@ router.route('/:id(\\d+)')
      * @tags Artwork
      * @param {number} id - Artwork identifier
      * @return {Artwork} 200 - Success response - application/json
-     * @return { ? } 400 - Bad request response - application/json
-     * @return { ? } 404 - Artwork not found - application/json
+     * @return { ApiError } 400 - Bad request response - application/json
+     * @return { ApiError } 404 - Artwork not found - application/json
      */
     .get(wrapper(controller.getOne));
 

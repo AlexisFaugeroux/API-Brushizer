@@ -24,6 +24,18 @@ router.route('/:id(\\d+)')
      * @return { ApiError } 400 - Bad request response - application/json
      * @return { ApiError } 404 - User not found - application/json
      */
-    .get(wrapper(controller.getOne));
+    .get(wrapper(controller.getOneByPk));
+
+router.route('/:pseudo')
+    /**
+     * GET /users/:pseudo
+     * @summary Get one user
+     * @tags User
+     * @param {string} pseudo - user identifier
+     * @return {User} 200 - Success response - application/json
+     * @return { ApiError } 400 - Bad request response - application/json
+     * @return { ApiError } 404 - User not found - application/json
+     */
+    .get(wrapper(controller.getOneByPseudo));
 
 export default router;

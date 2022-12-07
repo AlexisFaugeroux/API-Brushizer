@@ -16,13 +16,13 @@ GET {{ endpoint }}/artworks
 GET {{ endpoint }}/artworks/6
 
 ############################
-#         USERS         #
+#         ROLES        #
 ############################
 
 ### List of all roles
 GET {{ endpoint }}/roles
 
-### Get one based on its id
+### Get one role based on its id
 GET {{ endpoint }}/roles/3
 
 ############################
@@ -32,5 +32,8 @@ GET {{ endpoint }}/roles/3
 ### List of all users
 GET {{ endpoint }}/users
 
-### Get one user based on its email
-GET {{ endpoint }}/users/4
+### Get one user based on its id
+GET {{ endpoint }}/users/2
+
+### Get one user based on its pseudo
+GET {{ endpoint }}/users/mezange

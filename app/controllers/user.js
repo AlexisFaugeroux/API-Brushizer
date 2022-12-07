@@ -20,10 +20,26 @@ export default {
      * @param {object} res - Express middleware response
      * @returns {object} Route API JSON response
      */
-    async getOne(req, res) {
+    async getOneByPk(req, res) {
         const { id } = req.params;
 
         const user = await Model.user.findByPk(id);
+
+        if (!user) throw new Error404('User not found');
+
+        return res.json(user);
+    },
+
+    /**
+     * Controller for GET /users/:pseudo
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns {object} Route API JSON response
+     */
+    async getOneByPseudo(req, res) {
+        const { pseudo } = req.params;
+
+        const user = await Model.user.findByPseudo(pseudo);
 
         if (!user) throw new Error404('User not found');
 

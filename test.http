@@ -2,6 +2,9 @@
 
 @endpoint = http://localhost:{{$dotenv PORT}}
 
+### 404
+GET {{ endpoint }}/somethingsmart
+
 ############################
 #         ARTWORKS         #
 ############################
@@ -11,3 +14,60 @@ GET {{ endpoint }}/artworks
 
 ### Get one artwork based on its id
 GET {{ endpoint }}/artworks/6
+
+############################
+#         LOGIN            #
+############################
+
+### User login
+POST {{ endpoint }}/login
+content-type: application/json
+
+{
+    "pseudo": "Mezange",
+    "password": "NFT"
+}
+
+### Invalid User login - Unauthorized
+POST {{ endpoint }}/login
+content-type: application/json
+
+{
+    "pseudo": "Mezange",
+    "password": "somesupersecretpassword"
+}
+
+### Invalid User login - Bad request
+POST {{ endpoint }}/login
+content-type: application/json
+
+{
+    "pseudo": "Mezange"
+}
+
+### Authenticate a request
+GET {{ endpoint }}/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwc2V1ZG8iOiJNZXphbmdlIiwicGFzc3dvcmQiOiJORlQiLCJpcCI6Ijo6ZmZmZjoxMjcuMC4wLjEiLCJpYXQiOjE2NzA0MjYyMjgsImV4cCI6MTY3MDQ0NzgyOH0.UZ8EBBkha8yQpuXXgi4OJRcn15u_tyNX07XgcFOHA1o
+
+############################
+#         ROLES            #
+############################
+
+### List of all roles
+GET {{ endpoint }}/roles
+
+### Get one role based on its id
+GET {{ endpoint }}/roles/3
+
+############################
+#         USERS            #
+############################
+
+### List of all users
+GET {{ endpoint }}/users
+
+### Get one user based on its id
+GET {{ endpoint }}/users/2
+
+### Get one user based on its pseudo
+GET {{ endpoint }}/users/mezange

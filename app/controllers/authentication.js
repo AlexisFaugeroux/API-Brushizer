@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import Model from '../models/index.js';
 import jwtHelper from '../helpers/jwt.js';
 import Error401 from '../helpers/error401.js';
-import Error400 from '../helpers/error400.js';
+// import Error400 from '../helpers/error400.js';
 
 export default {
     /**
@@ -14,7 +14,7 @@ export default {
     async login(req, res) {
         const { pseudo, password } = req.body;
 
-        if (!pseudo || !password) throw new Error400('Please provide both pseudo and password');
+        // if (!pseudo || !password) throw new Error400('Please provide both pseudo and password');
 
         const user = await Model.user.findByPseudo(pseudo.toLowerCase());
 

@@ -101,7 +101,7 @@ export default class CoreDatamapper {
                 VALUES(${placeHolders})
             RETURNING *
             `,
-            [values],
+            values,
         );
 
         const row = result.rows[0];
@@ -114,4 +114,31 @@ export default class CoreDatamapper {
      * @param {object} param data to be update along with record identifier
      * @returns {object} updated record
      */
+    async update({ id, ...inputData }) {
+        const fieldsAndPlaceHolders = [];
+        const values = [];
+        let indexPlaceHolder = 1;
+
+        Object.entries(inputData).forEach(([prop, value]) => {
+            fieldsAndPlaceHolders.push(`"${prop}" = $${indexPlaceHolder}`);
+            values.push(value);
+            indexPlaceHolder += 1;
+        });
+
+        values.push(id);
+
+        const result = await this.client.query(
+            `
+            UPDATE "${this.tableName}"
+                SET ${fieldsAndPlaceHolders},
+                WHERE id = $${indexPlaceHolder}
+            RETURNING *
+            `,
+            values,
+        );
+
+        const row = result.rows[0];
+
+        return row;
+    }
 }

@@ -6,7 +6,7 @@ import Error401 from '../helpers/error401.js';
 
 export default {
     /**
-     * Controller for POST /users
+     * Controller for POST /login
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response
      * @returns Route API JSON response
@@ -26,7 +26,7 @@ export default {
 
         const token = jwtHelper.generateTokenForUser({ ...req.body, ip: req.ip });
 
-        return res.status(200).json({ token });
+        return res.status(200).json({ token, pseudo: user.pseudo });
     },
 
     // async testJWT(req, res) {

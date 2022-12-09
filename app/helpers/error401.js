@@ -3,7 +3,7 @@ export default class Error401 extends Error {
     constructor(message) {
         super(message);
         this.name = 'Error 401 - Unauthorized';
-        // Add property "status" to error 401 class to provide response status to client
+        // Add property "status" to Error401 class to provide response status to client
         this.status = 401;
     }
 }

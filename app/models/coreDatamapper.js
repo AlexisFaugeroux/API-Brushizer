@@ -76,4 +76,69 @@ export default class CoreDatamapper {
 
         return result.rows;
     }
+
+    /**
+     * Insert a record in a table
+     * @param {object} inputData data to be inserted
+     * @returns {object} created record
+     */
+    async create(inputData) {
+        const fields = [];
+        const values = [];
+        const placeHolders = [];
+        let indexPlaceHolder = 1;
+
+        Object.entries(inputData).forEach(([prop, value]) => {
+            fields.push(`"${prop}"`);
+            values.push(value);
+            placeHolders.push(`$${indexPlaceHolder}`);
+            indexPlaceHolder += 1;
+        });
+
+        const result = await this.client.query(
+            `
+            INSERT INTO "${this.tableName}"(${fields})
+                VALUES(${placeHolders})
+            RETURNING *
+            `,
+            values,
+        );
+
+        const row = result.rows[0];
+
+        return row;
+    }
+
+    /**
+     * Update data in a table
+     * @param {object} param data to be update along with record identifier
+     * @returns {object} updated record
+     */
+    async update({ id, ...inputData }) {
+        const fieldsAndPlaceHolders = [];
+        const values = [];
+        let indexPlaceHolder = 1;
+
+        Object.entries(inputData).forEach(([prop, value]) => {
+            fieldsAndPlaceHolders.push(`"${prop}" = $${indexPlaceHolder}`);
+            values.push(value);
+            indexPlaceHolder += 1;
+        });
+
+        values.push(id);
+
+        const result = await this.client.query(
+            `
+            UPDATE "${this.tableName}"
+                SET ${fieldsAndPlaceHolders},
+                WHERE id = $${indexPlaceHolder}
+            RETURNING *
+            `,
+            values,
+        );
+
+        const row = result.rows[0];
+
+        return row;
+    }
 }

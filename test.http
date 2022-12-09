@@ -60,6 +60,29 @@ GET {{ endpoint }}/roles
 GET {{ endpoint }}/roles/3
 
 ############################
+#         ROLES            #
+############################
+
+### Create a new user in database if does not already exist
+POST {{ endpoint }}/signup
+content-type: application/json
+
+{
+    "email": "faugeroux.alexis@gmail.com",
+    "password": "Plantey",
+    "pseudo": "tf988"
+}
+
+### Invalid request
+POST {{ endpoint }}/signup
+content-type: application/json
+
+{
+    "email": "eergergerg",
+    "password": "Plantey"
+}
+
+############################
 #         USERS            #
 ############################
 

@@ -141,4 +141,15 @@ export default class CoreDatamapper {
 
         return row;
     }
+
+    /**
+     * Delete a record
+     * @param {number} id record identifier
+     * @returns {number} number of records deleted (truthy/falsy)
+     */
+    async delete(id) {
+        const result = await this.client.query(`DELETE FROM "${this.tableName}" WHERE id = $1`, [id]);
+
+        return !!result.rowCount;
+    }
 }

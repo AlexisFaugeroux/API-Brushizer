@@ -20,7 +20,7 @@ GET {{ endpoint }}/artworks/6
 ############################
 
 ### User login
-POST {{ endpoint }}/login
+POST {{ endpoint }}/users/login
 content-type: application/json
 
 {
@@ -29,7 +29,7 @@ content-type: application/json
 }
 
 ### Invalid User login - Unauthorized
-POST {{ endpoint }}/login
+POST {{ endpoint }}/users/login
 content-type: application/json
 
 {
@@ -38,7 +38,7 @@ content-type: application/json
 }
 
 ### Invalid User login - Bad request
-POST {{ endpoint }}/login
+POST {{ endpoint }}/users/login
 content-type: application/json
 
 {
@@ -46,7 +46,7 @@ content-type: application/json
 }
 
 ### Authenticate a request
-GET {{ endpoint }}/test
+GET {{ endpoint }}/testJWT
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwc2V1ZG8iOiJNZXphbmdlIiwicGFzc3dvcmQiOiJORlQiLCJpcCI6Ijo6ZmZmZjoxMjcuMC4wLjEiLCJpYXQiOjE2NzA0MjYyMjgsImV4cCI6MTY3MDQ0NzgyOH0.UZ8EBBkha8yQpuXXgi4OJRcn15u_tyNX07XgcFOHA1o
 
 ############################
@@ -60,11 +60,11 @@ GET {{ endpoint }}/roles
 GET {{ endpoint }}/roles/3
 
 ############################
-#         ROLES            #
+#      SIGNUP/SIGNOUT      #
 ############################
 
 ### Create a new user in database if does not already exist
-POST {{ endpoint }}/signup
+POST {{ endpoint }}/users/signup
 content-type: application/json
 
 {
@@ -73,14 +73,17 @@ content-type: application/json
     "pseudo": "tf988"
 }
 
-### Invalid request
-POST {{ endpoint }}/signup
+### Invalid create user request
+POST {{ endpoint }}/users/signup
 content-type: application/json
 
 {
     "email": "eergergerg",
     "password": "Plantey"
 }
+
+### Delete a new user in database if exists
+DELETE {{ endpoint }}/users/signout/6
 
 ############################
 #         USERS            #

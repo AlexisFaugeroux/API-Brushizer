@@ -6,8 +6,10 @@ import Error400 from '../helpers/error400.js';
 import Error401 from '../helpers/error401.js';
 import Error404 from '../helpers/error404.js';
 
-const debugSignup = debug('signup');
-const debugSignout = debug('signout');
+const debugSignup = debug('Signup');
+const debugSignout = debug('Signout');
+
+const debugLogout = debug('Logout');
 
 export default {
     /**
@@ -122,6 +124,20 @@ export default {
         const token = jwtHelper.generateTokenForUser({ ...req.body, ip: req.ip });
 
         return res.status(200).json({ token, pseudo: user.pseudo });
+    },
+
+    /**
+     * Controller for POST /users/login
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async logout(req, res) {
+        debugLogout(req.user);
+
+        req.user = null;
+
+        return res.status(200);
     },
 
     // async testJWT(req, res) {

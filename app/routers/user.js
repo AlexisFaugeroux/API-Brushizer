@@ -55,7 +55,7 @@ router.route('/signout/:id')
     /**
      * DELETE /users/signout/:id
      * @summary Delete a user in database
-     * @return {User} - 200 - Success response - application/json
+     * @return {Boolean} - 200 - Success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
     .delete(wrapper(controller.signout));
@@ -69,5 +69,13 @@ router.route('/login')
      * @return {ApiError} 401 - Incorrect pseudo or password response - application/json
      */
     .post(validate('body', loginSchema), wrapper(controller.login));
+
+router.route('/logout')
+    /**
+     * GET /users/logout
+     * @summary Logs out a user
+     * @return - 200 - Success response - application/json
+     */
+    .get(wrapper(controller.logout));
 
 export default router;

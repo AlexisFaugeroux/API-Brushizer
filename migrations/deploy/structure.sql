@@ -12,6 +12,7 @@ CREATE TABLE "user"(
     "email" TEXT NOT NULL UNIQUE,
     "password" TEXT NOT NULL,
     "pseudo" TEXT NOT NULL UNIQUE,
+    "country" TEXT NOT NULL,
     "profile_pic" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ,

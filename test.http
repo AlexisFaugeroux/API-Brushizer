@@ -70,6 +70,7 @@ content-type: application/json
 {
     "email": "faugeroux.alexis@gmail.com",
     "password": "Plantey",
+    "country": "France",
     "pseudo": "tf988"
 }
 
@@ -97,3 +98,4 @@ GET {{ endpoint }}/users/2
 
 ### Get one user based on its pseudo
 GET {{ endpoint }}/users/mezange
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkYTZwRDBPSTNlbEJzRHpqOUdwbEtETzNnUmRiZVBPN09DdnVFRHIzL0JYWFA2Smk3WExGUEMiLCJwc2V1ZG8iOiJNZXphbmdlIiwicHJvZmlsZV9waWMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTA5VDE0OjQ4OjUyLjEyMFoiLCJ1cGRhdGVkX2F0IjpudWxsLCJyb2xlX2lkIjozLCJpcCI6Ijo6ZmZmZjoxMjcuMC4wLjEiLCJpYXQiOjE2NzA4MzQ2MTMsImV4cCI6MTY3MDg1NjIxM30.VZmpLX9UmQDdMCaJTprj_IECVcCIdl8UV2w1sULXwqQ

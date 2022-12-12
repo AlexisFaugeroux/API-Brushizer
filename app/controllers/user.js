@@ -121,7 +121,7 @@ export default {
 
         if (!isPasswordOK) throw new Error401('Incorrect pseudo or password');
 
-        const token = jwtHelper.generateTokenForUser({ ...req.body, ip: req.ip });
+        const token = jwtHelper.generateTokenForUser({ ...user, ip: req.ip });
 
         return res.status(200).json({ token, pseudo: user.pseudo });
     },

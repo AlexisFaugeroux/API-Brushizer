@@ -4,6 +4,6 @@ export default class Error403 extends Error {
         super(message);
         this.name = 'Error 403 - Forbidden';
         // Add property "status" to Error403 class to provide response status to client
-        this.status = 404;
+        this.status = 403;
     }
 }

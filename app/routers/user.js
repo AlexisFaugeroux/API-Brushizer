@@ -1,5 +1,6 @@
 import express from 'express';
 
+import jwtVerify from '../middlewares/jwtVerify.js';
 import wrapper from '../middlewares/controllerWrapper.js';
 import controller from '../controllers/user.js';
 
@@ -16,12 +17,12 @@ router.route('/')
      * @tags User
      * @return {[User]} 200 - Success response - application/json
      */
-    .get(wrapper(controller.getAll));
+    .get(jwtVerify, wrapper(controller.getAll));
 
 router.route('/:id(\\d+)')
     /**
      * GET /users/:id
-     * @summary Get one user data
+     * @summary Get one user data by id
      * @tags User
      * @param {number} id - user identifier
      * @return {User} 200 - Success response - application/json
@@ -33,14 +34,14 @@ router.route('/:id(\\d+)')
 router.route('/:pseudo')
     /**
      * GET /users/:pseudo
-     * @summary Get one user
+     * @summary Get one user data by pseudo
      * @tags User
      * @param {string} pseudo - user identifier
      * @return {User} 200 - Success response - application/json
      * @return { ApiError } 400 - Bad request response - application/json
      * @return { ApiError } 404 - User not found - application/json
      */
-    .get(wrapper(controller.getOneByPseudo));
+    .get(jwtVerify, wrapper(controller.getOneByPseudo));
 
 router.route('/signup')
     /**
@@ -58,7 +59,7 @@ router.route('/signout/:id')
      * @return {Boolean} - 200 - Success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .delete(wrapper(controller.signout));
+    .delete(jwtVerify, wrapper(controller.signout));
 
 router.route('/login')
     /**
@@ -76,6 +77,6 @@ router.route('/logout')
      * @summary Logs out a user
      * @return - 200 - Success response - application/json
      */
-    .get(wrapper(controller.logout));
+    .get(jwtVerify, wrapper(controller.logout));
 
 export default router;

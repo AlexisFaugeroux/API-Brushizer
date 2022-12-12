@@ -53,6 +53,8 @@ export default {
 
         if (!user) throw new Error404('User not found');
 
+        console.log(req.user);
+
         return res.json(user);
     },
 
@@ -121,7 +123,7 @@ export default {
 
         if (!isPasswordOK) throw new Error401('Incorrect pseudo or password');
 
-        const token = jwtHelper.generateTokenForUser({ ...req.body, ip: req.ip });
+        const token = jwtHelper.generateTokenForUser({ ...user, ip: req.ip });
 
         return res.status(200).json({ token, pseudo: user.pseudo });
     },

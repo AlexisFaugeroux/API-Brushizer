@@ -63,10 +63,10 @@ const debugImport = debug('importData');
         const hashedPassword = await bcrypt.hash(user.password, 10);
         await client.query(
             `
-            INSERT INTO "user"("email", "password", "pseudo", "profile_pic", "role_id")
-                VALUES($1,$2,$3,$4,$5)
+            INSERT INTO "user"("email", "password", "pseudo", "country", "profile_pic", "role_id")
+                VALUES($1,$2,$3,$4,$5,$6)
             `,
-            [user.email, hashedPassword, user.pseudo, user.profile_pic, user.role_id],
+            [user.email, hashedPassword, user.pseudo, user.country, user.profile_pic, user.role_id],
         );
     }
 

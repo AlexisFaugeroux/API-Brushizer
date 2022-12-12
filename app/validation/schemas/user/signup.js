@@ -8,6 +8,10 @@ export default Joi.object({
         .pattern(/^[a-zA-Z0-9]{3,30}$/, 'password')
         .required(),
     pseudo: Joi.string()
+        .pattern(/[a-zA-Z]{2,}/, 'country')
+        .max(30)
+        .required(),
+    country: Joi.string()
         .alphanum()
         .min(2)
         .max(30)

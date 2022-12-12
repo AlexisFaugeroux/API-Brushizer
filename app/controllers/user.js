@@ -53,8 +53,6 @@ export default {
 
         if (!user) throw new Error404('User not found');
 
-        console.log(req.user);
-
         return res.json(user);
     },
 

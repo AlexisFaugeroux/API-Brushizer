@@ -128,7 +128,7 @@ export default {
     },
 
     /**
-     * Controller for POST /users/login
+     * Controller for POST /users/logout
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response
      * @returns Route API JSON response

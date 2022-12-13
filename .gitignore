@@ -7,10 +7,6 @@ node_modules
 package-lock.json
 *.gz
 
-#log
-**/*.log
-**/*.log.*
-
 #vscode
 .vs_code/
 
@@ -19,3 +15,6 @@ package-lock.json
 sqitch.conf
 
 validation/schemas/artwork
+
+logs/
+!logs/.empty

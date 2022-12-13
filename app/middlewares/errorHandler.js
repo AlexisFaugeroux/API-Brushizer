@@ -1,5 +1,9 @@
 // Error handling express middleware
 
+// import bunyan from 'bunyan';
+
+// const log = bunyan.createLogger({name: ""})
+
 // eslint-disable-next-line no-unused-vars
 export default (displayType) => (err, _, res, next) => {
     let status = 500;

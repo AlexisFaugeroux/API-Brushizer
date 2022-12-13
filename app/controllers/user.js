@@ -86,6 +86,7 @@ export default {
 
         return res.json(newUser);
     },
+
     /**
          * Controller for DELETE /users/signup/:id
          * @param {object} req - Express middleware request
@@ -139,8 +140,4 @@ export default {
 
         return res.status(200);
     },
-
-    // async testJWT(req, res) {
-    //     res.status(200).json({ message: 'Login successful' });
-    // },
 };

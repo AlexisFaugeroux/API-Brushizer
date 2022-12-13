@@ -45,10 +45,6 @@ content-type: application/json
     "pseudo": "Mezange"
 }
 
-### Authenticate a request
-GET {{ endpoint }}/testJWT
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwc2V1ZG8iOiJNZXphbmdlIiwicGFzc3dvcmQiOiJORlQiLCJpcCI6Ijo6ZmZmZjoxMjcuMC4wLjEiLCJpYXQiOjE2NzA0MjYyMjgsImV4cCI6MTY3MDQ0NzgyOH0.UZ8EBBkha8yQpuXXgi4OJRcn15u_tyNX07XgcFOHA1o
-
 ############################
 #         ROLES            #
 ############################

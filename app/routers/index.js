@@ -11,8 +11,6 @@ import Error404 from '../helpers/error404.js';
 
 const router = express.Router();
 
-// router.get('/testJWT', jwtVerify, userController.testJWT);
-
 router.use('/artworks', artworkRouter);
 router.use('/roles', roleRouter);
 router.use('/users', userRouter);

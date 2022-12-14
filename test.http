@@ -15,8 +15,22 @@ GET {{ endpoint }}/artworks
 ### Get one artwork based on its id
 GET {{ endpoint }}/artworks/6
 
+### Create a new artwork in database if does not already exist
+POST {{ endpoint }}/artworks
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4
+
+{
+    "name": "L'origine du monde",
+    "image": "imagefile",
+    "description": "Lorem ipsum",
+    "artist_name": "tf988",
+    "price_usd": 999,
+    "price_sol": 450
+}
+
 ############################
-#         LOGIN            #
+#       LOGIN/LOGOUT       #
 ############################
 
 ### User login
@@ -27,6 +41,10 @@ content-type: application/json
     "pseudo": "Mezange",
     "password": "NFT"
 }
+
+### User logout
+POST {{ endpoint }}/users/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4
 
 ### Invalid User login - Unauthorized
 POST {{ endpoint }}/users/login
@@ -88,10 +106,11 @@ DELETE {{ endpoint }}/users/signout/6
 
 ### List of all users
 GET {{ endpoint }}/users
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4
 
 ### Get one user based on its id
 GET {{ endpoint }}/users/2
 
 ### Get one user based on its pseudo
 GET {{ endpoint }}/users/mezange
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkYTZwRDBPSTNlbEJzRHpqOUdwbEtETzNnUmRiZVBPN09DdnVFRHIzL0JYWFA2Smk3WExGUEMiLCJwc2V1ZG8iOiJNZXphbmdlIiwicHJvZmlsZV9waWMiOm51bGwsImNyZWF0ZWRfYXQiOiIyMDIyLTEyLTA5VDE0OjQ4OjUyLjEyMFoiLCJ1cGRhdGVkX2F0IjpudWxsLCJyb2xlX2lkIjozLCJpcCI6Ijo6ZmZmZjoxMjcuMC4wLjEiLCJpYXQiOjE2NzA4MzQ2MTMsImV4cCI6MTY3MDg1NjIxM30.VZmpLX9UmQDdMCaJTprj_IECVcCIdl8UV2w1sULXwqQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4

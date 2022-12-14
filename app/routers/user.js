@@ -73,10 +73,10 @@ router.route('/login')
 
 router.route('/logout')
     /**
-     * GET /users/logout
+     * POST /users/logout
      * @summary Logs out a user
      * @return - 200 - Success response - application/json
      */
-    .get(jwtVerify, wrapper(controller.logout));
+    .post(jwtVerify, wrapper(controller.logout));
 
 export default router;

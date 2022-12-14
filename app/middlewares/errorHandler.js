@@ -18,6 +18,7 @@ export default (displayType) => (err, _, res, next) => {
     }
 
     if (status === 500) {
+        console.log(err.message);
         message = 'Internal Server Error, please try again later';
         logger.error(err);
     }

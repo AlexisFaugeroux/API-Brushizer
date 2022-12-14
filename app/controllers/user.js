@@ -68,11 +68,11 @@ export default {
 
         debugSignup(req.body);
 
-        const userCheck = await Model.user.isUnique(req.body);
+        const isNotUnique = await Model.user.isUnique(req.body);
 
-        if (userCheck) {
+        if (isNotUnique) {
             let field = '';
-            if (req.body.email === userCheck.email) {
+            if (req.body.email === isNotUnique.email) {
                 field = 'email';
             } else {
                 field = 'pseudo';
@@ -95,6 +95,8 @@ export default {
          */
     async signout(req, res) {
         const { id } = req.params;
+
+        if (req.user.id !== id) throw new Error401('Cannot signout another user');
 
         const isDeletionOK = await Model.user.delete(id);
 
@@ -124,7 +126,7 @@ export default {
 
         const token = jwtHelper.generateTokenForUser({ ...user, ip: req.ip });
 
-        return res.status(200).json({ token, pseudo: user.pseudo });
+        return res.status(200).json({ token, pseudo: user.pseudo, id: user.id });
     },
 
     /**

@@ -4,27 +4,24 @@ export default Joi.object({
     name: Joi.string()
         .min(2)
         .max(30)
-        .required,
+        .required(),
     image: Joi.string()
         .min(2)
         .max(30)
-        .required,
+        .required(),
     description: Joi.string()
         .min(2)
-        .required,
+        .required(),
     artist_name: Joi.string()
         .min(2)
         .max(30)
-        .required,
+        .required(),
     price_usd: Joi.number()
         .positive()
-        .required,
+        .required(),
     price_sol: Joi.number()
         .positive()
-        .required,
-    user_id: Joi.number()
-        .integer()
-        .positive(),
+        .required(),
     collection_id: Joi.number()
         .integer()
         .positive(),

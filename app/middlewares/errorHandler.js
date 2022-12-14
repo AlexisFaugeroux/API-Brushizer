@@ -1,6 +1,8 @@
 // Error handling express middleware
-
+import debug from 'debug';
 import logger from '../helpers/logger.js';
+
+const debugError = debug('ErrorHandler');
 
 // eslint-disable-next-line no-unused-vars
 export default (displayType) => (err, _, res, next) => {
@@ -18,7 +20,7 @@ export default (displayType) => (err, _, res, next) => {
     }
 
     if (status === 500) {
-        console.log(err.message);
+        debugError(err.message);
         message = 'Internal Server Error, please try again later';
         logger.error(err);
     }

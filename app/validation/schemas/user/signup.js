@@ -14,6 +14,8 @@ export default Joi.object({
     country: Joi.string()
         .pattern(/[a-zA-Z][a-zA-Z ]{2,30}/, 'country')
         .required(),
+    description: Joi.string()
+        .min(2),
     profile_pic: Joi.string()
         .alphanum()
         .max(30),

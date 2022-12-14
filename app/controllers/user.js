@@ -49,7 +49,9 @@ export default {
     async getOneByPseudo(req, res) {
         const { pseudo } = req.params;
 
-        const user = await Model.user.findByPseudo(pseudo);
+        const result = await Model.user.findByPseudo(pseudo);
+
+        const { password, ...user } = result;
 
         if (!user) throw new Error404('User not found');
 

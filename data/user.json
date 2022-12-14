@@ -4,6 +4,7 @@
         "password": "sortezvouslesdoigtsducul",
         "pseudo": "LeSanglierdeCornouailles",
         "country": "France",
+        "description": "Roi de Bretagne",
         "role_id": "3"
     },
     {
@@ -11,6 +12,7 @@
         "password": "cestpasfaux",
         "pseudo": "ProvencçalleGaulois",
         "country": "France",
+        "description": "Je n'ai jamais été adoubé",
         "role_id": "1"
     },
     {
@@ -18,6 +20,7 @@
         "password": "tourelles",
         "pseudo": "LeSanguinaire",
         "country": "France",
+        "description": "Merde.",
         "role_id": "2"
     },
     {
@@ -25,6 +28,7 @@
         "password": "NFT",
         "pseudo": "Mezange",
         "country": "France",
+        "description": "NFT creator",
         "role_id": "3"
     }
 ]

@@ -103,7 +103,6 @@ export default class CoreDatamapper {
             `,
             values,
         );
-
         const row = result.rows[0];
 
         return row;

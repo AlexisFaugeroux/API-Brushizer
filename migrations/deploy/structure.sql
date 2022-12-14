@@ -13,6 +13,7 @@ CREATE TABLE "user"(
     "password" TEXT NOT NULL,
     "pseudo" TEXT NOT NULL UNIQUE,
     "country" TEXT NOT NULL,
+    "description" TEXT,
     "profile_pic" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ,
@@ -39,7 +40,7 @@ CREATE TABLE "artwork"(
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ,
     "user_id" INT NOT NULL REFERENCES "user"("id"),
-    "collection_id" INT NOT NULL REFERENCES "collection"("id")
+    "collection_id" INT REFERENCES "collection"("id")
 );
 
 CREATE TABLE "attribute"(

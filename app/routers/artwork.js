@@ -1,7 +1,7 @@
 import express from 'express';
 
 import jwtVerify from '../middlewares/jwtVerify.js';
-// import creatorCheck from '../middlewares/creatorCheck.js';
+import creatorCheck from '../middlewares/creatorCheck.js';
 import validate from '../validation/validator.js';
 import createSchema from '../validation/schemas/artwork/create.js';
 import wrapper from '../middlewares/controllerWrapper.js';
@@ -24,7 +24,7 @@ router.route('/')
      * @return {Artwork} 200 - Success response - application/json
      * @return { ApiError } 400 - Bad request response - application/json
      */
-    .post(jwtVerify, validate('body', createSchema), wrapper(controller.addOne));
+    .post(jwtVerify, creatorCheck, validate('body', createSchema), wrapper(controller.addOne));
 
 router.route('/:id(\\d+)')
     /**

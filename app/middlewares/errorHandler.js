@@ -20,12 +20,13 @@ export default (displayType) => (err, _, res, next) => {
     }
 
     if (status === 500) {
-        debugError(err.message);
+        debugError(message);
         message = 'Internal Server Error, please try again later';
         logger.error(err);
     }
 
     if (displayType === 'json') {
+        debugError(err);
         res.status(status).json({ error: message });
     }
 };

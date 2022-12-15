@@ -7,6 +7,7 @@ import controller from '../controllers/user.js';
 import validate from '../validation/validator.js';
 import signupSchema from '../validation/schemas/user/signup.js';
 import loginSchema from '../validation/schemas/user/login.js';
+import updateSchema from '../validation/schemas/user/update.js';
 
 const router = express.Router();
 
@@ -26,10 +27,21 @@ router.route('/:id(\\d+)')
      * @tags User
      * @param {number} id - user identifier
      * @return {User} 200 - Success response - application/json
-     * @return { ApiError } 400 - Bad request response - application/json
-     * @return { ApiError } 404 - User not found - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - User not found - application/json
      */
-    .get(wrapper(controller.getOneByPk));
+    .get(wrapper(controller.getOneByPk))
+    /**
+     * PATCH /users/:id
+     * @summary Update user data
+     * @tags User
+     * @param {number} id - user identifier
+     * @param {InputData} request.body- user info top update
+     * @return {User} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - User not found - application/json
+     */
+    .patch(jwtVerify, validate('body', updateSchema), wrapper(controller.update));
 
 router.route('/:pseudo')
     /**
@@ -38,8 +50,8 @@ router.route('/:pseudo')
      * @tags User
      * @param {string} pseudo - user identifier
      * @return {User} 200 - Success response - application/json
-     * @return { ApiError } 400 - Bad request response - application/json
-     * @return { ApiError } 404 - User not found - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - User not found - application/json
      */
     .get(jwtVerify, wrapper(controller.getOneByPseudo));
 

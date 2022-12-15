@@ -126,15 +126,12 @@ export default class CoreDatamapper {
 
         values.push(id);
 
-        const result = await this.client.query(
-            `
-            UPDATE "${this.tableName}"
-                SET ${fieldsAndPlaceHolders},
-                WHERE id = $${indexPlaceHolder}
-            RETURNING *
-            `,
+        const preparedQuery = {
+            text: `UPDATE "${this.tableName}" SET ${fieldsAndPlaceHolders} WHERE id = $${indexPlaceHolder} RETURNING *`,
             values,
-        );
+        };
+
+        const result = await this.client.query(preparedQuery);
 
         const row = result.rows[0];
 

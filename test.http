@@ -51,8 +51,8 @@ POST {{ endpoint }}/users/login
 content-type: application/json
 
 {
-    "pseudo": "Mezange",
-    "password": "somesupersecretpassword"
+    "pseudo": "tf988",
+    "password": "Plantey"
 }
 
 ### Invalid User login - Bad request
@@ -98,7 +98,8 @@ content-type: application/json
 }
 
 ### Delete a new user in database if exists
-DELETE {{ endpoint }}/users/signout/6
+DELETE {{ endpoint }}/users/signout/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJmYXVnZXJvdXguYWxleGlzQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZXYkZCS3BOTG9yd1RJdWpUUGV0SC4wNGpGeHN4bFhvc3JuRllnUy9FZjBpS0xXOWV3YWtLIiwicHNldWRvIjoidGY5ODgiLCJjb3VudHJ5IjoiRnJhbmNlIiwiZGVzY3JpcHRpb24iOm51bGwsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xNVQwODoyMjo1My4yNDZaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MSwiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDkyNjA5LCJleHAiOjE2NzExMTQyMDl9.BzkvUHBUYYXMqa2kzpdV8ZFehQXz3d8V9G38DGhSNh0
 
 ############################
 #         USERS            #

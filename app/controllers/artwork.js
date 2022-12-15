@@ -1,6 +1,12 @@
+import debug from 'debug';
+
 import Model from '../models/index.js';
 import Error400 from '../helpers/error400.js';
 import Error404 from '../helpers/error404.js';
+import Error401 from '../helpers/error401.js';
+
+const debugUpdate = debug('updateArtwork');
+const debugDelete = debug('deleteArtwork');
 
 export default {
     /**
@@ -54,5 +60,59 @@ export default {
         const newArtwork = await Model.artwork.create(req.body);
 
         return res.json(newArtwork);
+    },
+
+    /**
+     * Controller for PATCH /artworks/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async update(req, res) {
+        const id = parseInt(req.params.id, 10);
+
+        const artwork = await Model.artwork.update(id);
+
+        if (!artwork) throw new Error404('This artwork does not exist');
+
+        if (req.body.image) {
+            const existingArtwork = await Model.artwork.isUnique(req.body, id);
+
+            if (existingArtwork) {
+                let field;
+                if (existingArtwork.image === req.body.image) {
+                    field = 'image';
+                }
+                throw new Error400(`Another artwork already exists with this ${field}`);
+            }
+        }
+
+        req.body.id = id;
+        const updatedArtwork = await Model.artwork.update(req.body);
+
+        debugUpdate(updatedArtwork);
+
+        return res.json(updatedArtwork);
+    },
+    /**
+     * Controller for DELETE /artworks/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async delete(req, res) {
+        const id = parseInt(req.params.id, 10);
+
+        const artwork = await Model.artwork.findByPk(id);
+
+        if (!artwork) throw new Error404('This artwork does not exist');
+
+        if (req.user.id !== artwork.user_id) throw new Error401('Cannot signout another artwork');
+
+        const isDeletionOK = await Model.artwork.delete(id);
+
+        debugDelete(isDeletionOK);
+
+        return res.status(204).json(isDeletionOK);
     },
 };

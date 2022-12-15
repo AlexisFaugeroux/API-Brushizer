@@ -82,7 +82,7 @@ POST {{ endpoint }}/users/signup
 content-type: application/json
 
 {
-    "email": "faugeroux.alexis@gmail.com",
+    "email": "test@test.com",
     "password": "Plantey",
     "country": "France",
     "pseudo": "tf988"
@@ -115,3 +115,12 @@ GET {{ endpoint }}/users/2
 ### Get one user based on its pseudo
 GET {{ endpoint }}/users/mezange
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4
+
+### Update one user data in database
+PATCH {{ endpoint }}/users/4
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkWU8wdGI2RkRDTHBkR3JhTE1yRWlPZThsYmR2OEc0YjV1MlNRQTBGNVB6dC5TMXYuM3UzeEciLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTVUMDg6MjI6NDMuNDk4WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTExNTY3MSwiZXhwIjoxNjcxMTM3MjcxfQ.H3kES8i8qTwSKbehZSa6YIV1K4Admh-Rp8ZLHUtRVfI
+
+{
+    "description": "Que vienne la nuit sonne l'heure"
+}

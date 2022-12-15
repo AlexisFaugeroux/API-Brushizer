@@ -8,8 +8,8 @@ import Error404 from '../helpers/error404.js';
 
 const debugSignup = debug('Signup');
 const debugSignout = debug('Signout');
-
 const debugLogout = debug('Logout');
+const debugUpdate = debug('UpdateUser');
 
 export default {
     /**
@@ -90,11 +90,11 @@ export default {
     },
 
     /**
-         * Controller for DELETE /users/signup/:id
-         * @param {object} req - Express middleware request
-         * @param {object} res - Express middleware response
-         * @returns Route API JSON response
-         */
+     * Controller for DELETE /users/signup/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
     async signout(req, res) {
         const id = parseInt(req.params.id, 10);
 
@@ -143,5 +143,29 @@ export default {
         req.user = null;
 
         return res.status(200);
+    },
+
+    /**
+     * Controller for PATCH /users/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async update(req, res) {
+        const id = parseInt(req.params.id, 10);
+
+        const user = await Model.user.findByPk(id);
+
+        if (req.user.id !== id) throw new Error401('Cannot signout another user');
+
+        if (!user) throw new Error404('This user does not exist');
+
+        req.body.id = id;
+
+        const updatedUser = await Model.user.update(req.body);
+
+        debugUpdate(updatedUser);
+
+        return res.json(updatedUser);
     },
 };

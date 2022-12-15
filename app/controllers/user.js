@@ -96,7 +96,7 @@ export default {
          * @returns Route API JSON response
          */
     async signout(req, res) {
-        const { id } = req.params;
+        const id = parseInt(req.params.id, 10);
 
         if (req.user.id !== id) throw new Error401('Cannot signout another user');
 

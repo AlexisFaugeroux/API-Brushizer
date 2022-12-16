@@ -15,7 +15,6 @@ export default {
      * @param {object} res - Express middleware response
      * @returns Route API JSON response
      */
-
     async getAll(_, res) {
         const artworks = await Model.artwork.findAll();
 
@@ -71,9 +70,11 @@ export default {
     async update(req, res) {
         const id = parseInt(req.params.id, 10);
 
-        const artwork = await Model.artwork.update(id);
+        const artwork = await Model.artwork.findByPk(id);
 
         if (!artwork) throw new Error404('This artwork does not exist');
+
+        if (req.user.id !== artwork.user_id) throw new Error401('Cannot update artwork from another user');
 
         if (req.body.image) {
             const existingArtwork = await Model.artwork.isUnique(req.body, id);
@@ -94,6 +95,7 @@ export default {
 
         return res.json(updatedArtwork);
     },
+
     /**
      * Controller for DELETE /artworks/:id
      * @param {object} req - Express middleware request
@@ -107,7 +109,11 @@ export default {
 
         if (!artwork) throw new Error404('This artwork does not exist');
 
-        if (req.user.id !== artwork.user_id) throw new Error401('Cannot signout another artwork');
+        if (req.user.id !== artwork.user_id) throw new Error401('Cannot delete an artwork from another artist');
+
+        const artworkFkey = await Model.artwork_has_attribute.deleteFkey(id);
+
+        debugDelete('Foreign Key:', artworkFkey);
 
         const isDeletionOK = await Model.artwork.delete(id);
 

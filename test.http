@@ -115,9 +115,9 @@ content-type: application/json
     "password": "Plantey"
 }
 
-### Delete a new user in database if exists
-DELETE {{ endpoint }}/users/signout/5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJmYXVnZXJvdXguYWxleGlzQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZXYkZCS3BOTG9yd1RJdWpUUGV0SC4wNGpGeHN4bFhvc3JuRllnUy9FZjBpS0xXOWV3YWtLIiwicHNldWRvIjoidGY5ODgiLCJjb3VudHJ5IjoiRnJhbmNlIiwiZGVzY3JpcHRpb24iOm51bGwsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xNVQwODoyMjo1My4yNDZaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MSwiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDkyNjA5LCJleHAiOjE2NzExMTQyMDl9.BzkvUHBUYYXMqa2kzpdV8ZFehQXz3d8V9G38DGhSNh0
+### Delete a user in database if exists
+DELETE {{ endpoint }}/users/signout/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkTi42dXRiTGttdjNlQ3IxL2VHT0cvLjExdHJ0ODZjeGlDZ0JNYjd3TDB2VWUxLnVqbFV0eFMiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTZUMTY6MDU6NDAuODI2WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTIwNjc4OCwiZXhwIjoxNjcxMjI4Mzg4fQ.uXr5ZNeRghVDJMH4EdIIC4IJefQySWCujyZin1Tx87U
 
 ############################
 #         USERS            #

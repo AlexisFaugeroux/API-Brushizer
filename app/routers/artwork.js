@@ -59,4 +59,13 @@ router.route('/:id(\\d+)')
      */
     .delete(jwtVerify, wrapper(controller.delete));
 
+router.route('/user/:id(\\d+)')
+    /**
+     * GET /artworks/user/:id
+     * @summary Get all artworks from a user
+     * @tags Artwork
+     * @return {[Artwork]} 200 - Success response - application/json
+     */
+    .get(wrapper(controller.getAllFromUser));
+
 export default router;

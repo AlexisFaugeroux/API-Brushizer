@@ -22,6 +22,26 @@ export default {
     },
 
     /**
+     * Controller for GET /artworks/user/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async getAllFromUser(req, res) {
+        const { id } = req.params;
+
+        const user = await Model.user.findByPk(id);
+
+        if (!user) throw new Error404('This user does not exist');
+
+        const artworks = await Model.artwork.findAll({ $where: { user_id: id } });
+
+        if (!artworks) throw new Error404('Artwork not found');
+
+        return res.json(artworks);
+    },
+
+    /**
      * Controller for GET /artworks/:id
      * @param {object} req - Express middleware request
      * @param {object} res - Express middleware response

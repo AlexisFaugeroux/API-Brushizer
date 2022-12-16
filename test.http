@@ -12,6 +12,9 @@ GET {{ endpoint }}/somethingsmart
 ### List of all artworks
 GET {{ endpoint }}/artworks
 
+### List of all artworks from a user
+GET {{ endpoint }}/artworks/user/4
+
 ### Get one artwork based on its id
 GET {{ endpoint }}/artworks/6
 

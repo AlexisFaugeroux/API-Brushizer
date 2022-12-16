@@ -12,13 +12,16 @@ GET {{ endpoint }}/somethingsmart
 ### List of all artworks
 GET {{ endpoint }}/artworks
 
+### List of all artworks from a user
+GET {{ endpoint }}/artworks/user/4
+
 ### Get one artwork based on its id
 GET {{ endpoint }}/artworks/6
 
 ### Create a new artwork in database if does not already exist
 POST {{ endpoint }}/artworks
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkb0JrYTRpbjVmenBWOHRmb2RlaUtqLk5SdWdrbzBCLlQzUlROUUJMcHQySmZPaTN6WE9FanUiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsInByb2ZpbGVfcGljIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMi0xMi0xM1QxNDowNzoyNy4wNDNaIiwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwiaWF0IjoxNjcxMDExNTgwLCJleHAiOjE2NzEwMzMxODB9.rRIeoDjDzDaJHfWl15Zj7Mr9ioz96spGj9nvam_imN4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZzVXcU5nWHozVDY2TVFETFF4anZUZU5ldVFhZmdsRm16eDYuTExwVExWUlFKMURUc2ZzanEiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTVUMTU6MTE6MzkuMjE0WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTE4NDg3MiwiZXhwIjoxNjcxMjA2NDcyfQ.ebddNYWnsEf8PcaZ0JM3Utj1rHdWVdoe2mOKmPU-R_s
 
 {
     "name": "L'origine du monde",
@@ -28,6 +31,21 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiO
     "price_usd": 999,
     "price_sol": 450
 }
+
+### Update an artwork data in database
+PATCH {{ endpoint }}/artworks/7
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZzVXcU5nWHozVDY2TVFETFF4anZUZU5ldVFhZmdsRm16eDYuTExwVExWUlFKMURUc2ZzanEiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTVUMTU6MTE6MzkuMjE0WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTE4NDg3MiwiZXhwIjoxNjcxMjA2NDcyfQ.ebddNYWnsEf8PcaZ0JM3Utj1rHdWVdoe2mOKmPU-R_s
+
+{
+    "description": "Lorem ipsum",
+    "price_usd": 500,
+    "price_sol": 500
+}
+
+### Delete an artwork data in database
+DELETE {{ endpoint }}/artworks/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZzVXcU5nWHozVDY2TVFETFF4anZUZU5ldVFhZmdsRm16eDYuTExwVExWUlFKMURUc2ZzanEiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTVUMTU6MTE6MzkuMjE0WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTE4NDg3MiwiZXhwIjoxNjcxMjA2NDcyfQ.ebddNYWnsEf8PcaZ0JM3Utj1rHdWVdoe2mOKmPU-R_s
 
 ############################
 #       LOGIN/LOGOUT       #

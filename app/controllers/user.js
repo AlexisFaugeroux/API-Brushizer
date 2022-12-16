@@ -156,7 +156,7 @@ export default {
 
         const user = await Model.user.findByPk(id);
 
-        if (req.user.id !== id) throw new Error401('Cannot signout another user');
+        if (req.user.id !== id) throw new Error401('Cannot update data from another user');
 
         if (!user) throw new Error404('This user does not exist');
 

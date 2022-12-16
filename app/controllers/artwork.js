@@ -15,9 +15,28 @@ export default {
      * @param {object} res - Express middleware response
      * @returns Route API JSON response
      */
-
     async getAll(_, res) {
         const artworks = await Model.artwork.findAll();
+
+        return res.json(artworks);
+    },
+
+    /**
+     * Controller for GET /artworks/user/:id
+     * @param {object} req - Express middleware request
+     * @param {object} res - Express middleware response
+     * @returns Route API JSON response
+     */
+    async getAllFromUser(req, res) {
+        const { id } = req.params;
+
+        const user = await Model.user.findByPk(id);
+
+        if (!user) throw new Error404('This user does not exist');
+
+        const artworks = await Model.artwork.findAll({ $where: { user_id: id } });
+
+        if (!artworks) throw new Error404('Artwork not found');
 
         return res.json(artworks);
     },
@@ -71,9 +90,11 @@ export default {
     async update(req, res) {
         const id = parseInt(req.params.id, 10);
 
-        const artwork = await Model.artwork.update(id);
+        const artwork = await Model.artwork.findByPk(id);
 
         if (!artwork) throw new Error404('This artwork does not exist');
+
+        if (req.user.id !== artwork.user_id) throw new Error401('Cannot update artwork from another user');
 
         if (req.body.image) {
             const existingArtwork = await Model.artwork.isUnique(req.body, id);
@@ -94,6 +115,7 @@ export default {
 
         return res.json(updatedArtwork);
     },
+
     /**
      * Controller for DELETE /artworks/:id
      * @param {object} req - Express middleware request
@@ -107,7 +129,11 @@ export default {
 
         if (!artwork) throw new Error404('This artwork does not exist');
 
-        if (req.user.id !== artwork.user_id) throw new Error401('Cannot signout another artwork');
+        if (req.user.id !== artwork.user_id) throw new Error401('Cannot delete an artwork from another artist');
+
+        const artworkFkey = await Model.artwork_has_attribute.deleteFkey(id);
+
+        debugDelete('Foreign Key:', artworkFkey);
 
         const isDeletionOK = await Model.artwork.delete(id);
 

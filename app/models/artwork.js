@@ -41,4 +41,26 @@ export default class Artwork extends CoreDatamapper {
 
         return result.rows[0];
     }
+
+    /**
+     * Delete user foreign key in table
+     * @param {number} id user identifier
+     * @returns {number} number of records deleted (truthy/falsy)
+     */
+    async deleteUserFkeyRecords(id) {
+        const result = await this.client.query(`DELETE FROM "${this.tableName}" WHERE "user_id" = $1`, [id]);
+
+        return !!result.rowCount;
+    }
+
+    /**
+     * Delete collection foreign key in table
+     * @param {number} id collection identifier
+     * @returns {number} number of records deleted (truthy/falsy)
+     */
+    async deleteCollectionFkey(id) {
+        const result = await this.client.query(`DELETE FROM "${this.tableName}" WHERE "collection_id" = $1`, [id]);
+
+        return !!result.rowCount;
+    }
 }

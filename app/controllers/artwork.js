@@ -73,7 +73,7 @@ export default {
             if (req.body.image === isNotUnique.image) {
                 field = 'image';
             }
-            throw new Error400(`User already exists with this ${field}`);
+            throw new Error400(`A record already exists with this ${field}`);
         }
 
         const newArtwork = await Model.artwork.create(req.body);

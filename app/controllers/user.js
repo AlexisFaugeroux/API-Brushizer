@@ -65,11 +65,13 @@ export default {
      * @returns Route API JSON response
      */
     async signup(req, res) {
-        req.body.role_id = 1;
+        if (!req.body.role_id) {
+            req.body.role_id = 1;
+        }
+
         req.body.password = await bcrypt.hash(req.body.password, 10);
 
         debugSignup(req.body);
-
         const isNotUnique = await Model.user.isUnique(req.body);
 
         if (isNotUnique) {

@@ -131,7 +131,7 @@ export default {
 
         if (req.user.id !== artwork.user_id) throw new Error401('Cannot delete an artwork from another artist');
 
-        await Model.artwork_has_attribute.deleteArtworkFkeys(id);
+        await Model.artwork_has_attribute.deleteOneArtworkFkeyRecords(id);
 
         const isDeletionOK = await Model.artwork.delete(id);
 

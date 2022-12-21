@@ -17,7 +17,9 @@ export default Joi.object({
     description: Joi.string()
         .min(2),
     profile_pic: Joi.string()
-        .alphanum()
         .max(30),
+    role_id: Joi.number()
+        .positive()
+        .min(1),
 });
 // .required();

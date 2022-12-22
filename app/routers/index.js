@@ -4,6 +4,7 @@ import logger from '../helpers/logger.js';
 import artworkRouter from './artwork.js';
 import roleRouter from './role.js';
 import userRouter from './user.js';
+import adminRouter from './admin.js'
 
 // import jwtVerify from '../middlewares/jwtVerify.js';
 
@@ -20,6 +21,8 @@ router.use((req, _, next) => {
 router.use('/artworks', artworkRouter);
 router.use('/roles', roleRouter);
 router.use('/users', userRouter);
+
+router.use('/admin', adminRouter);
 
 // Error 404 handler middleware
 router.use((_, __, next) => {

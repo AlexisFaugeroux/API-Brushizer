@@ -15,7 +15,7 @@ export default Joi.object({
         .pattern(/[a-zA-Z][a-zA-Z ]{2,30}/, 'country')
         .required(),
     description: Joi.string()
-        .min(2),
+        .allow(''),
     profile_pic: Joi.string()
         .max(30),
     role_id: Joi.number()

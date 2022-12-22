@@ -9,7 +9,8 @@ export default Joi.object({
     //     .alphanum()
     //     .min(2)
     //     .max(30),
-    description: Joi.string(),
+    description: Joi.string()
+        .allow(''),
     profile_pic: Joi.string()
         .max(30),
 }).min(1);

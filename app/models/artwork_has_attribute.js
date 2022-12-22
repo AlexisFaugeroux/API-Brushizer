@@ -35,7 +35,7 @@ export default class ArtworkHasAttribute extends CoreDatamapper {
     async deleteOneArtworkFkeyRecords(id) {
         const preparedQuery = {
             text: `DELETE FROM "${this.tableName}" WHERE artwork_id = ${id}`,
-            values: id,
+            values: [id],
         };
 
         const result = await this.client.query(preparedQuery);

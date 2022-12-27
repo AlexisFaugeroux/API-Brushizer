@@ -10,8 +10,7 @@ export default Joi.object({
         .max(30)
         .required(),
     description: Joi.string()
-        .min(2)
-        .required(),
+        .allow(''),
     artist_name: Joi.string()
         .min(2)
         .max(30)

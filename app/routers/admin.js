@@ -8,7 +8,7 @@ import adminCheck from '../middlewares/adminCheck.js';
 
 const router = express.Router();
 
-router.route('/signout/:id')
+router.route('/users/delete/:id')
     /**
      * DELETE /users/delete/:id
      * @summary Delete a user in database
@@ -16,3 +16,5 @@ router.route('/signout/:id')
      * @return {ApiError} 400 - Bad request response - application/json
      */
     .delete(jwtVerify, adminCheck, wrapper(controller.deleteUser));
+
+    export default router;

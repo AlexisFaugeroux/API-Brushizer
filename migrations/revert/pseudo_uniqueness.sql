@@ -3,6 +3,6 @@
 BEGIN;
 
 ALTER TABLE "user"
-    ALTER COLUMN pesudo TYPE TEXT;
+    ALTER COLUMN pseudo TYPE TEXT;
 
 COMMIT;

@@ -119,7 +119,7 @@ export default {
 
                 // Delete foreign keys related to the artworks from the artwork_has_attribute table
                 debugSignout('Delete artworks foreign keys in artwork_has_attribute table');
-                await Model.artwork_has_attribute.deleteArtworkFkeysRecords(userArtworksIds);
+                await Model.artwork_has_attribute.deleteArtworksFkeysRecords(userArtworksIds);
 
                 debugSignout('Delete all the artist artworks in artwork table');
                 await Model.artwork.deleteUserFkeyRecords(id);

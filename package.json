@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node .",
     "dev": "NODE_ENV=development DEBUG=*,-express:*,-nodemon*,-send,-body-parser* npx nodemon server.js",

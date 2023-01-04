@@ -24,10 +24,10 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJlbWVyaWMubG95ZXJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZzVXcU5nWHozVDY2TVFETFF4anZUZU5ldVFhZmdsRm16eDYuTExwVExWUlFKMURUc2ZzanEiLCJwc2V1ZG8iOiJNZXphbmdlIiwiY291bnRyeSI6IkZyYW5jZSIsImRlc2NyaXB0aW9uIjoiTkZUIGNyZWF0b3IiLCJwcm9maWxlX3BpYyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjItMTItMTVUMTU6MTE6MzkuMjE0WiIsInVwZGF0ZWRfYXQiOm51bGwsInJvbGVfaWQiOjMsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSIsImlhdCI6MTY3MTE4NDg3MiwiZXhwIjoxNjcxMjA2NDcyfQ.ebddNYWnsEf8PcaZ0JM3Utj1rHdWVdoe2mOKmPU-R_s
 
 {
-    "name": "L'origine du monde",
+    "name": "TestArtwork",
     "image": "imagefile",
     "description": "Lorem ipsum",
-    "artist_name": "tf988",
+    "artist_name": "Artist",
     "price_usd": 999,
     "price_sol": 450
 }
@@ -69,8 +69,8 @@ POST {{ endpoint }}/users/login
 content-type: application/json
 
 {
-    "pseudo": "tf988",
-    "password": "Plantey"
+    "pseudo": "pseudo",
+    "password": "secretpassword"
 }
 
 ### Invalid User login - Bad request
@@ -101,9 +101,9 @@ content-type: application/json
 
 {
     "email": "test@test.com",
-    "password": "Plantey",
+    "password": "secretpassword",
     "country": "France",
-    "pseudo": "tf988"
+    "pseudo": "pseudo"
 }
 
 ### Invalid create user request
@@ -112,7 +112,7 @@ content-type: application/json
 
 {
     "email": "eergergerg",
-    "password": "Plantey"
+    "password": "secretpassword"
 }
 
 ### Delete a user in database if exists

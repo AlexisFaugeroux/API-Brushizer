@@ -9,4 +9,3 @@ export default Joi.object({
         .pattern(/^[a-zA-Z0-9]{3,30}$/, 'password')
         .required(),
 });
-// .required();

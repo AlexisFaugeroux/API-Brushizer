@@ -1,15 +1,9 @@
-import debug from 'debug';
 import bcrypt from 'bcrypt';
 import Model from '../models/index.js';
 import jwtHelper from '../helpers/jwt.js';
 import Error400 from '../helpers/error400.js';
 import Error401 from '../helpers/error401.js';
 import Error404 from '../helpers/error404.js';
-
-const debugSignup = debug('Signup');
-const debugSignout = debug('Signout');
-const debugLogout = debug('Logout');
-const debugUpdate = debug('UpdateUser');
 
 export default {
     /**
@@ -71,7 +65,6 @@ export default {
 
         req.body.password = await bcrypt.hash(req.body.password, 10);
 
-        debugSignup(req.body);
         const isNotUnique = await Model.user.isUnique(req.body);
 
         if (isNotUnique) {
@@ -118,21 +111,16 @@ export default {
                 });
 
                 // Delete foreign keys related to the artworks from the artwork_has_attribute table
-                debugSignout('Delete artworks foreign keys in artwork_has_attribute table');
                 await Model.artwork_has_attribute.deleteArtworksFkeysRecords(userArtworksIds);
-
-                debugSignout('Delete all the artist artworks in artwork table');
+                // Delete all the artist artworks in artwork table
                 await Model.artwork.deleteUserFkeyRecords(id);
-
-                debugSignout('Delete collections data related to the artist in collection table');
+                // Delete collections data related to the artist in collection table
                 await Model.collection.deleteUserFkeyRecords(id);
             }
         // Ready for artist account deletion
         }
 
         const isDeletionOK = await Model.user.delete(id);
-
-        debugSignout('isDeletionOK', isDeletionOK);
 
         if (!isDeletionOK) throw new Error404('This user does not exist');
 
@@ -168,8 +156,6 @@ export default {
      * @returns Route API JSON response
      */
     async logout(req, res) {
-        debugLogout(req.user);
-
         req.user = null;
 
         return res.status(200);
@@ -193,8 +179,6 @@ export default {
         req.body.id = id;
 
         const updatedUser = await Model.user.update(req.body);
-
-        debugUpdate(updatedUser);
 
         return res.json(updatedUser);
     },

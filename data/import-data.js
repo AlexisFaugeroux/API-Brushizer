@@ -43,21 +43,6 @@ const debugImport = debug('importData');
 
     await Promise.all(roleQueries);
 
-    // const userQueries = [];
-
-    // users.forEach((user) => {
-    //     debugImport('Processing user: ', user.email);
-    //     const hashedPassword = bcrypt.hash(user.password, 10);
-    //     const query = client.query(
-    //         `
-    //         INSERT INTO "user"("email", "password", "pseudo", "profile_pic", "role_id")
-    //             VALUES($1,$2,$3,$4,$5)
-    //         `,
-    //         [user.email, hashedPassword, user.pseudo, user.profile_pic, user.role_id],
-    //     );
-    //     userQueries.push(query);
-    // });
-
     for (const user of users) {
         debugImport('Processing user: ', user.email);
         const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -77,8 +62,6 @@ const debugImport = debug('importData');
             ],
         );
     }
-
-    // await Promise.all(userQueries);
 
     const collectionQueries = [];
 

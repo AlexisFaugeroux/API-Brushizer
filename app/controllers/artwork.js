@@ -1,12 +1,7 @@
-import debug from 'debug';
-
 import Model from '../models/index.js';
 import Error400 from '../helpers/error400.js';
 import Error404 from '../helpers/error404.js';
 import Error401 from '../helpers/error401.js';
-
-const debugUpdate = debug('updateArtwork');
-const debugDelete = debug('deleteArtwork');
 
 export default {
     /**
@@ -111,8 +106,6 @@ export default {
         req.body.id = id;
         const updatedArtwork = await Model.artwork.update(req.body);
 
-        debugUpdate(updatedArtwork);
-
         return res.json(updatedArtwork);
     },
 
@@ -134,8 +127,6 @@ export default {
         await Model.artwork_has_attribute.deleteOneArtworkFkeyRecords(id);
 
         const isDeletionOK = await Model.artwork.delete(id);
-
-        debugDelete(isDeletionOK);
 
         return res.status(204).json(isDeletionOK);
     },

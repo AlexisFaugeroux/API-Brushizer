@@ -1,7 +1,3 @@
-import debug from 'debug';
-
-const debugValidator = debug('Validator:log');
-
 /**
  * Validation middleware factory
  * @param {string} dataSource - Middleware request property name that contains data to validate
@@ -10,7 +6,6 @@ const debugValidator = debug('Validator:log');
  */
 export default (dataSource, schema) => async (req, _, next) => {
     try {
-        debugValidator(req[dataSource]);
         await schema.validateAsync(req[dataSource]);
         next();
     } catch (err) {

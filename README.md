@@ -70,5 +70,3 @@ npm run resetDB
 ``` bash
 npm start
 ```
-
-6. 

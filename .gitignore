@@ -17,3 +17,6 @@ sqitch.conf
 #log
 logs/
 !logs/.empty
+
+#views
+app/views

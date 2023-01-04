@@ -9,4 +9,3 @@ export default Joi.object({
         .positive(),
 
 }).min(1);
-// .required();

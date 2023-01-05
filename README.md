@@ -1,4 +1,4 @@
-# Bruhizer API
+# Brushizer API
 
 Brushizer is an ongoing project that aims to offer digital artists a web platform so they can display their work and eventually sell it.
 This repository contains the Brushizer API code, written in Node.js and designed to be the back-end part of the website. It relies on PostgresSQL as the object-relational database system and Sqitch for database change management.

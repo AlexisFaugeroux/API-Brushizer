@@ -53,13 +53,13 @@ sqitch deploy
 node ./data/import-data.js
 ```
 
-Note: To deploy tables and import fake data in one go, execute the npm script deployDB:
+Note: To deploy tables and import fake data in one go, execute the npm script *deployDB*:
 
 ```bash
 npm run deployDB
 ```
 
-Note: To reset database, execute the npm script resetDB:
+Note: To reset database, execute the npm script *resetDB*:
 
 ```bash
 npm run resetDB

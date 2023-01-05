@@ -1,0 +1,22 @@
+# Linux
+**/.directory
+**/*~
+
+# npm
+node_modules
+package-lock.json
+*.gz
+
+#vscode
+.vs_code/
+
+#config
+.env
+sqitch.conf
+
+#log
+logs/
+!logs/.empty
+
+#views
+app/views

@@ -1,163 +1,147 @@
 [
     {
         "name": "#001",
-        "image": "001.png", 
+        "image": "001.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 457,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#002",
-        "image": "002.png", 
+        "image": "002.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 79,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#003",
-        "image": "003.png", 
+        "image": "003.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 7532,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#004",
-        "image": "004.png", 
+        "image": "004.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 436,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#005",
-        "image": "005.png", 
+        "image": "005.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 741147,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#006",
-        "image": "006.png", 
+        "image": "006.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 3,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#007",
-        "image": "007.png", 
+        "image": "007.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 783,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#008",
-        "image": "008.png", 
+        "image": "008.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 453,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#009",
-        "image": "009.png", 
+        "image": "009.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 23,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#010",
-        "image": "010.png", 
+        "image": "010.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 256,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#011",
-        "image": "011.png", 
+        "image": "011.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 6535,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#012",
-        "image": "012.png", 
+        "image": "012.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 789,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#013",
-        "image": "013.png", 
+        "image": "013.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 354,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#014",
-        "image": "014.png", 
+        "image": "014.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 24,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
 
     {
         "name": "#015",
-        "image": "015.png", 
+        "image": "015.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 789,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     },
     {
         "name": "#016",
-        "image": "016.png", 
+        "image": "016.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "artist_name": "Mezange",
-        "price_usd": "99.0",
-        "price_sol": "2.5",
-        "user_id": "4",
-        "collection_id": "1"
+        "artwork_view": 6,
+        "price_usd": 99.0,
+        "price_sol": 2.5,
+        "collection_id": 1
     }
 ]

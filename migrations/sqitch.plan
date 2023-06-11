@@ -1,6 +1,0 @@
-%syntax-version=1.0.0
-%project=brushizer
-
-structure 2022-12-01T09:43:23Z faugeroux.alexis@gmail.com <faugeroux.alexis@gmail.com> # Create tables role, user, collection, artwork, attribute, artwork_has_attribute
-initial_constraints 2022-12-01T10:41:41Z faugeroux.alexis@gmail.com <faugeroux.alexis@gmail.com> # Add positivity constaint on prices, add custom email domain and add updated_at > created_at constraint
-pseudo_uniqueness 2022-12-19T09:39:42Z faugeroux.alexis@gmail.com <faugeroux.alexis@gmail.com> # Ensure user pseudo uniqueness using citext extension

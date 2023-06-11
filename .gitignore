@@ -12,7 +12,6 @@ package-lock.json
 
 #config
 .env
-sqitch.conf
 
 #log
 logs/
@@ -20,3 +19,16 @@ logs/
 
 #views
 app/views
+
+#http
+http
+
+#prisma
+prisma
+
+#prettier
+.prettierignore
+.prettierrc.yml
+
+#eslint
+.eslintrc.json

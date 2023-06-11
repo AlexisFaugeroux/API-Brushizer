@@ -1,7 +1,6 @@
 [
-    {    
-    "name": "Brushizer",
-    "artist_name": "Mezange",
-    "user_id": "4"
+    {
+        "title": "Brushizer",
+        "artist_id": 4
     }
 ]

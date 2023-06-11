@@ -1,34 +1,38 @@
 [
     {
-        "email":"arthur.pendragon@gmail.com",
+        "email": "arthur.pendragon@gmail.com",
         "password": "sortezvouslesdoigtsducul",
         "pseudo": "LeSanglierdeCornouailles",
         "country": "France",
         "description": "Roi de Bretagne",
-        "role_id": "3"
+        "profile_view": 465,
+        "role_id": 3
     },
     {
-        "email":"perceval.deGalles@orange.fr",
+        "email": "perceval.deGalles@orange.fr",
         "password": "cestpasfaux",
         "pseudo": "ProvencalleGaulois",
         "country": "France",
         "description": "Je n'ai jamais été adoubé",
-        "role_id": "1"
+        "profile_view": 584698,
+        "role_id": 1
     },
     {
-        "email":"leodagan.deCarmelide@gmail.com",
+        "email": "leodagan.deCarmelide@gmail.com",
         "password": "tourelles",
         "pseudo": "LeSanguinaire",
         "country": "France",
         "description": "Merde.",
-        "role_id": "2"
+        "profile_view": 12,
+        "role_id": 2
     },
     {
-        "email":"emeric.loyer@gmail.com",
+        "email": "emeric.loyer@gmail.com",
         "password": "NFT",
         "pseudo": "Mezange",
         "country": "France",
         "description": "NFT creator",
-        "role_id": "3"
+        "profile_view": 98,
+        "role_id": 3
     }
 ]

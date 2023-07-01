@@ -3,35 +3,24 @@
         "es2021": true,
         "node": true
     },
-    "extends": [
-        "airbnb-base"
-    ],
+    "extends": ["airbnb-base"],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "requireConfigFile": false,
         "babelOptions": {
-            "plugins": [
-                "@babel/plugin-syntax-import-assertions"
-            ]
+            "plugins": ["@babel/plugin-syntax-import-assertions"]
         },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "indent": ["error", 4],
         "import/extensions": [
             "error",
             "never",
             {
-                "js": [
-                    "always"
-                ],
-                "json": [
-                    "always"
-                ]
+                "js": ["always"],
+                "json": ["always"]
             }
         ],
         "import/prefer-default-export": "off"

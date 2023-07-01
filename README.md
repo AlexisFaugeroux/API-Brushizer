@@ -15,33 +15,26 @@ JWT_SECRET=supersecretphrase
 CORS_DOMAINS=localhost
 ```
 
-To import fake data from data folder, run the following command:
-
-```bash
-prisma generate
-node run populateDB
-```
-
-Note: To deploy tables and import fake data in one go, execute the npm script deployDB:
+To deploy database tables and import fake data in one go:
 
 ```bash
 npm run prisma:migrate:dev
 ```
 
-Note: To reset database, execute the npm script resetDB:
+To import fake data from data folder:
+
+```bash
+node run populateDB
+```
+
+Note: To reset database:
 
 ```bash
 npm run prisma:migrate:reset
 ```
 
-3. Launch server using the following command:
+3. Launch dev server using the following command:
 
 ```bash
 npm run dev
-```
-
-4. Launch server using the following command:
-
-```bash
-npm start
 ```

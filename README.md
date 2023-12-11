@@ -1,8 +1,19 @@
-# Getting started
+# Bruhizer API
+
+Brushizer is an ongoing project that aims to offer digital artists a web platform so they can display their work and eventually sell it.
+This repository contains the Brushizer API code, written in Node.js and designed to be the back-end part of the website. It relies on PostgresSQL as the object-relational database system and Sqitch for database change management.
+
+It also contains a "data" folder, filled with a sample of fake data and a script that automatically imports them into the database in order to start testing the API quickly.
+
+## Project status (DEC 2023)
+
+Currently in V0, the API is not online yet. Coming soon !
+
+## Getting started
 
 1. Run the following command to install dependencies :
 
-```bash
+``` bash
 npm install
 ```
 
@@ -15,33 +26,34 @@ JWT_SECRET=supersecretphrase
 CORS_DOMAINS=localhost
 ```
 
-To import fake data from data folder, run the following command:
+3. Deploy the database
 
-```bash
-prisma generate
-node run populateDB
-```
+To deploy the database tables, run the following command:
 
-Note: To deploy tables and import fake data in one go, execute the npm script deployDB:
-
-```bash
+``` bash
 npm run prisma:migrate:dev
 ```
 
-Note: To reset database, execute the npm script resetDB:
+[Optional] To import fake data from data folder, run the following command:
 
 ```bash
-npm run prisma:migrate:reset
+node ./data/import-data.js
 ```
 
-3. Launch server using the following command:
+Note: To deploy tables and import fake data in one go, execute the npm script *deployDB*:
 
 ```bash
-npm run dev
+npm run deployDB
 ```
 
-4. Launch server using the following command:
+Note: To reset database, execute the npm script *resetDB*:
 
 ```bash
+npm run resetDB
+```
+
+5. Launch server using the following command:
+
+``` bash
 npm start
 ```

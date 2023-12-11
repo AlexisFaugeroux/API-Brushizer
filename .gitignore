@@ -17,9 +17,6 @@ package-lock.json
 logs/
 !logs/.empty
 
-#views
-app/views
-
 #http
 http
 
@@ -32,3 +29,6 @@ prisma
 
 #eslint
 .eslintrc.json
+
+#nodemon
+nodemon.json
